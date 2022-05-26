@@ -1,0 +1,21 @@
+# inventory.py
+stuff = {"item":"quantity",'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+def displayInventory(inventory):
+    while True:
+        print("Enter Inventory Item (press enter to quit): ")
+        key = input()
+        if key == "":
+            break
+        if key in stuff:
+            print("Item in inventory")
+            for key, v in inventory.items():
+                print(key + " - " + str(stuff[key]))
+        else:
+            print("Item not in inventory.")
+            print("Enter quantity")
+            quantity=input()
+            stuff[key]=quantity
+            print("Inventory updated!\n")
+            for key, v in inventory.items():
+                print(key + " - " + str(stuff[key]))
+displayInventory(stuff)
